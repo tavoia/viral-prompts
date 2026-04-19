@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# env files (nunca subas tu API key a GitHub)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# next.js
+.next/
+out/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
