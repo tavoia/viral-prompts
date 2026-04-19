@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Agente Prompts Virales</title>
+        <title>Tavo Agente de Prompts Virales</title>
         <meta name="description" content="Genera prompts virales para TikTok e Instagram" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -58,7 +58,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <h1>🎬 Agente de Prompts Virales</h1>
+            <h1>🎬 Tavo Agente de Prompts Virales</h1>
             <p>Humor y entretenimiento · 4 bloques × 6 seg = 24 seg</p>
           </div>
 

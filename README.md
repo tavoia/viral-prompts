@@ -1,6 +1,7 @@
-# 🎬 Agente de Prompts Virales
+# 🎬 Tavo Agente de Prompts Virales
 
-Genera prompts para vídeos virales de TikTok e Instagram en 4 bloques de 6 segundos.
+Genera prompts para vídeos virales de TikTok e Instagram en 4 bloques de 6 segundos.  
+Usa **Groq** (Llama 3.3 70B) — completamente gratis, sin tarjeta de crédito.
 
 ## Instalación local
 
@@ -8,9 +9,9 @@ Genera prompts para vídeos virales de TikTok e Instagram en 4 bloques de 6 segu
 npm install
 ```
 
-Crea un archivo `.env.local` con tu API key:
+Crea un archivo `.env.local` con tu API key de Groq:
 ```
-ANTHROPIC_API_KEY=sk-ant-tu-api-key-aqui
+GROQ_API_KEY=gsk_tu-api-key-aqui
 ```
 
 Arranca el servidor de desarrollo:
@@ -27,17 +28,17 @@ Abre [http://localhost:3000](http://localhost:3000)
 1. Sube este proyecto a GitHub
 2. Entra en [vercel.com](https://vercel.com) e importa el repositorio
 3. En la configuración del proyecto añade la variable de entorno:
-   - Nombre: `ANTHROPIC_API_KEY`
-   - Valor: tu API key de Anthropic
+   - Nombre: `GROQ_API_KEY`
+   - Valor: tu API key de Groq
 4. Haz clic en Deploy
-
-¡Listo! Vercel te dará una URL pública para compartir con tus usuarios.
 
 ---
 
-## Obtener API key de Anthropic
+## Obtener API key de Groq (gratis)
 
-1. Entra en [console.anthropic.com](https://console.anthropic.com)
-2. Crea una cuenta gratuita
+1. Entra en [console.groq.com](https://console.groq.com)
+2. Crea una cuenta gratuita (sin tarjeta de crédito)
 3. Ve a "API Keys" y crea una nueva key
-4. Copia y pégala en Vercel como variable de entorno
+4. Cópiala y pégala en Vercel como variable de entorno
+
+**Límite gratuito:** 14.400 peticiones/día con el modelo Llama 3.3 70B.
