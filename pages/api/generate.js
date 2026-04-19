@@ -1,6 +1,6 @@
-import Anthropic from "@anthropic-ai/sdk";
+import Groq from "groq-sdk";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const client = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const SYSTEM = `Eres un experto en creación de contenido viral para TikTok e Instagram, especializado en humor y entretenimiento.
 
@@ -28,20 +28,22 @@ export default async function handler(req, res) {
   }
 
   try {
-    const message = await client.messages.create({
-      model: "claude-sonnet-4-20250514",
+    const completion = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       max_tokens: 1024,
-      system: SYSTEM,
-      messages: [{ role: "user", content: `Idea para el video: ${topic}` }],
+      messages: [
+        { role: "system", content: SYSTEM },
+        { role: "user", content: `Idea para el video: ${topic}` },
+      ],
     });
 
-    const raw = message.content[0].text;
+    const raw = completion.choices[0].message.content;
     const clean = raw.replace(/```json|```/g, "").trim();
     const parsed = JSON.parse(clean);
 
     return res.status(200).json(parsed);
   } catch (error) {
-    console.error("Error Anthropic:", error);
+    console.error("Error Groq:", error);
     return res.status(500).json({ error: "Error al generar los prompts. Inténtalo de nuevo." });
   }
 }
