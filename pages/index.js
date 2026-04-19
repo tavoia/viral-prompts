@@ -68,7 +68,7 @@ export default function Home() {
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && generate()}
-              placeholder="Ej: Un gato que intenta usar el ordenador..."
+              placeholder="Ej: Un gato que intenta usar el ordenador en su caja de arena..."
               className={styles.input}
             />
             <button
